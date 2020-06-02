@@ -1,12 +1,13 @@
 package middleware
 
 import (
-	"github.com/labstack/echo"
-	mw "github.com/labstack/echo/middleware"
-	"github.com/sirupsen/logrus"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/labstack/echo/v4"
+	mw "github.com/labstack/echo/v4/middleware"
+	"github.com/sirupsen/logrus"
 )
 
 type (

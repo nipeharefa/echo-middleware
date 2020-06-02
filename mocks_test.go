@@ -2,11 +2,12 @@ package middleware
 
 import (
 	"bytes"
-	"github.com/labstack/gommon/log"
-	nr "github.com/newrelic/go-agent"
 	"io"
 	"net/http"
 	"time"
+
+	"github.com/labstack/gommon/log"
+	nr "github.com/newrelic/go-agent"
 )
 
 type (
@@ -21,7 +22,12 @@ type (
 )
 
 func (app *Application) StartTransaction(name string, w http.ResponseWriter, r *http.Request) nr.Transaction {
-	return &Transaction{Name: name}
+	t := &Transaction{}
+
+	t.Name = name
+	t.ResponseWriter = w
+	return t
+
 }
 
 func (app *Application) RecordCustomEvent(eventType string, params map[string]interface{}) error {

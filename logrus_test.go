@@ -3,13 +3,14 @@ package middleware
 import (
 	"bytes"
 	"errors"
-	"github.com/labstack/echo"
-	"github.com/sirupsen/logrus"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
 	"strings"
 	"testing"
+
+	"github.com/labstack/echo/v4"
+	"github.com/sirupsen/logrus"
 )
 
 func TestLogrusWithConfig(t *testing.T) {

@@ -2,10 +2,11 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/labstack/echo"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/labstack/echo/v4"
 )
 
 func TestNewRelicWhenRaiseAError(t *testing.T) {
